@@ -1,4 +1,3 @@
-var bodyParser = require('body-parser'); //body-parser module
 var express = require('express');
 var app = express();
 
@@ -17,8 +16,6 @@ app.use(function(req, res, next){
  console.log(req.method + ' ' + req.path + ' - ' + req.ip);
   next();
 });
-
-app.use(bodyParser.urlencoded({extended: false}));
 
 app.get('/api/whoami/', (req, res) => {
   //req.get() Returns the specified HTTP request header field
